@@ -2,7 +2,7 @@ chebyshev-distance
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes the Chebyshev distance between numeric arrays
+> Computes the [Chebyshev distance](http://en.wikipedia.org/wiki/Chebyshev_distance) between two sequences
 
 
 ## Installation
@@ -17,18 +17,68 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'compute-chebyshev-distance' );
+var chebyshev = require( 'compute-chebyshev-distance' );
 ```
 
-#### foo( arr )
+#### chebyshev( x, y[, accessor] )
 
-What does this function do?
+Computes the [Chebyshev distance](http://en.wikipedia.org/wiki/Chebyshev_distance) between two arrays `x` and `y` of equal length, defined as
 
+<div align="center">
+	<img src="https://github.com/compute-io/chebyshev-distance/blob/master/docs/img/eqn.png" alt="Formula of Chebyshev Distance" height="96px">
+	<br>
+</div>
+
+``` javascript
+
+var x = [ 1, 3, 7, 4 ],
+	y = [ 2, 4, 6, -4 ];
+
+var dist = chebyshev( x, y );
+// returns 8
+```
+
+The chebyshev distance is equal to the [Minkowski distance](http://en.wikipedia.org/wiki/Minkowski_distance) in the limiting case when `p` goes to infinity.
+
+To compute the [Chebyshev distance](http://en.wikipedia.org/wiki/Chebyshev_distance) between nested `array` values, provide an accessor `function` for accessing `numeric` values.
+
+``` javascript
+var x = [
+	{'x':2},
+	{'x':4},
+	{'x':5}
+];
+
+var y = [
+	[1,3],
+	[2,1],
+	[3,5]
+];
+
+function getValue( d, i, j ) {
+	if ( j === 0 ) {
+		return d.x;
+	}
+	return d[ 1 ];
+}
+
+var dist = chebyshev( x, y, getValue );
+// returns 3
+```
+
+The accessor `function` is provided three arguments:
+
+-	__d__: current datum.
+-	__i__: current datum index.
+-	__j__: array index; e.g., array `x` has index `0` and array `y` has index `1`.
+
+
+If provided empty `arrays`, the function returns `null`.
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-chebyshev-distance' );
+var chebyshev = require( 'compute-chebyshev-distance' );
 ```
 
 To run the example code from the top-level application directory,
@@ -69,7 +119,7 @@ $ make view-cov
 ---
 ## License
 
-[MIT license](http://opensource.org/licenses/MIT). 
+[MIT license](http://opensource.org/licenses/MIT).
 
 
 ## Copyright
