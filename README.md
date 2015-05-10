@@ -2,7 +2,7 @@ chebyshev-distance
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes the [Chebyshev distance](http://en.wikipedia.org/wiki/Chebyshev_distance) between two sequences
+> Computes the [Chebyshev distance](http://en.wikipedia.org/wiki/Chebyshev_distance) between two arrays
 
 
 ## Installation
@@ -25,7 +25,7 @@ var chebyshev = require( 'compute-chebyshev-distance' );
 Computes the [Chebyshev distance](http://en.wikipedia.org/wiki/Chebyshev_distance) between two arrays `x` and `y` of equal length, defined as
 
 <div align="center">
-	<img src="https://github.com/compute-io/chebyshev-distance/blob/master/docs/img/eqn.png" alt="Formula of Chebyshev Distance" height="96px">
+	<img src="https://github.com/compute-io/chebyshev-distance/blob/master/docs/img/eqn.png" alt="Formula of Chebyshev Distance" height="32px">
 	<br>
 </div>
 
