@@ -1,6 +1,6 @@
 {
   "name": "compute-chebyshev-distance",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Computes the Chebyshev distance between two arrays.",
   "author": {
     "name": "Philipp Burckhardt",
