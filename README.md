@@ -7,7 +7,7 @@ Chebyshev Distance
 The [Chebyshev distance](http://en.wikipedia.org/wiki/Chebyshev_distance) is a metric defined on a vector space where the distance between two vectors is the greatest difference along any coordinate dimension.
 
 <div class="equation" align="center" data-raw-text="d(\mathbf{x},\mathbf{y})= \lim_{p \to \infty} \left( \sum_{i=0}^{n-1} | x_i - y_i|^p \right)^{1/p} = \max_{i=0,\ldots,n-1} | x_i - y_i |" data-equation=“eq:chebyshev_distance”>
-	<img src="https://raw.githubusercontent.com/compute-io/chebyshev-distance/master/docs/img/eqn.svg" alt="Chebyshev distance formula" height="64px">
+	<img src="https://cdn.rawgit.com/compute-io/chebyshev-distance/master/docs/img/eqn.svg" alt="Chebyshev distance formula">
 	<br>
 </div>
 
